@@ -5,7 +5,7 @@ Particle[] atom = new Particle [1000];
  for(int i = 0; i < atom.length; i++)
   {
     atom[i] = new Particle ();
-    for(int j = 0; j < 11; j++)
+    for(int j = 0; j < 21; j++)
     {
     atom[j] = new OddballParticle();
     }
@@ -15,11 +15,14 @@ Particle[] atom = new Particle [1000];
  void draw()   
  {    
    background(0);
+   
    for(int i = 0; i < atom.length; i++)
   {
     atom[i].move();
     atom[i].show();
   }
+  fill(0,255,51);
+  ellipse(250,250,100,100);
  }
  
  void mousePressed()
@@ -38,7 +41,7 @@ Particle[] atom = new Particle [1000];
    Particle () 
    {
      myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
-     myX = Math.random()*500;
+     myX = 250;
      myY = 250;
      myAngle = Math.random()*2*PI;
      mySpeed = Math.random()*10;
@@ -59,7 +62,7 @@ Particle[] atom = new Particle [1000];
    
    void disperse()
    {
-     myX = (int)(Math.random()*500);
+     myX = 250;
      myY = 250;
    }
  }
@@ -81,7 +84,8 @@ Particle[] atom = new Particle [1000];
    {
     fill(myColor);
     stroke(myColor);
-    rect((float)myX,(float)myY,30,30,5);
+    rect((float)myX,(float)myY,30,30,150);
+    ellipse((float)myX + 15.5,(float)myY + 30,50,25);
    } 
  }
-
+ 
